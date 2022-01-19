@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>BOUTIQUE BOOTSTRAP</title>
+</head>
+<body class="d-flex flex-column align-items-center">
+
+    <header class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+            <div class="container-fluid">
+                <p class="navbar-brand flex-grow-1 flex-lg-grow-0 p-0 my-3">LaShop</p>
+                <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse align-self-start mb-2" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mt-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link lien-1" aria-current="page" href="#velos">Vélos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link lien-2" aria-current="page" href="#patins">Patins</a>
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-secondary position-relative me-4 panier" data-bs-toggle="offcanvas" data-bs-target="#fenetrePanierAchat"><i class="bi bi-cart2"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger panierIcone">
+                    0
+                    <span class="visually-hidden">messages non-lus</span>
+                  </span></button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-xl p-0">
+        <div id="carouselExampleIndicators" class="carousel slide xl-w-75" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./assets/img/patins1.jpg" class="d-block w-100" alt="Patin rouge de style rétro sur un fond en noir et blanc">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/img/velo1.jpg" class="d-block w-100" alt="vélo BULLS dans une forêt">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/img/velo3.jpg" class="d-block w-100" alt="vélo BIANCHI appuyé contre un mur">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <h1 class="text-center m-2">Produits de sport</h1>
+
+        
+        <div class="container d-flex flex-column align-items-end">
+            <p class="my-2 me-2 d-md-none">Affichage</p>
+            <div class="btn-group" role="group" aria-label="format affichage">
+                <input type="radio" class="btn-check" name="format_affichage" value="Mosaïque" id="btn_mosaique" checked>
+                <label class="btn btn-outline-dark" for="btn_mosaique"><i class="bi bi-grid-fill"></i><span class="d-none d-md-inline-block p-0 m-0">&nbsp;Mosaïque</span></label>
+            
+                <input type="radio" class="btn-check" name="format_affichage" value="Liste" id="btn_liste">
+                <label class="btn btn-outline-dark" for="btn_liste"><i class="bi bi-card-list"></i><span class="d-none d-md-inline-block p-0 m-0">&nbsp;Liste</span></label>
+            </div>
+        </div>
+
+
+    
+    
+        <section class="offcanvas offcanvas-end" id="fenetrePanierAchat">
+          <div class="offcanvas-header">
+            <h3>Mon panier</h3>
+            <button class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
+          </div>
+          <div class="offcanvas-body">
+            <p>Item(s) dans mon panier :</p>
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Item(s)</th>
+                        <th>Prix</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="produitDuPanier">
+                        
+                </tbody>
+            </table>
+          
+          <div class="alert alert-warning">
+            <h4 class="display-6 le-prix-total">Total : </h4>
+          </div>
+            
+            <a href="paiement.html" class="btn btn-success">Passer au paiement</a>
+            <button class="btn btn-primary" data-bs-dismiss="offcanvas" aria-label="Fermer">Retour au magasin</button>
+            </div>
+        </section>
+        
+
+        <section class="m-3" id="container-mosaique">
+
+            <div class="container-fluid mt-5">
+
+                <h2 id="velos">Vélos</h2>
+
+                <div class="row">
+
+                    <div class="container col-md-6 col-lg-4 d-flex justify-content-center">
+                        <div class="card row mb-4 le_produit" style="width: 18rem;">
+
+                            <div class="modal fade" id="modaleVelo1" tabindex="-1" aria-labelledby="ModalLabelVelo1" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title nomItem" id="ModalLabelVelo1">Vélo BULLS</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer la modal"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="./assets/img/velo1.jpg" class="card-img-top imageItem" alt="vélo BULLS dans une forêt">
+                                            <p>Vélo hybride de marque Bulls avec suspension ajustable à l'avant. Un vélo axé sur la performance avec un cadre en alliage et un système de changement de vistesse Shimano EF500 à 21 vitesses.</p>
+                                            
+                                            <p><span class="prix_produit">799.99</span>$</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success acheter">Acheter <i class="bi bi-cart-plus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <img src="./assets/img/velo1.jpg" class="card-img-top imageItem" alt="vélo BULLS dans une forêt">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <h5 class="card-title nomItem">Vélo BULLS</h5>
+                                    <p><span class="prix_produit">799.99</span>$</p>
+                                </div>
+                                <p class="card-text">Vélo hybride de marque Bulls</p>
+                                <div class="d-flex justify-content-between pt-4">
+                                    <button data-bs-toggle="modal" data-bs-target="#modaleVelo1" class="btn btn-primary">En savoir plus <i class="bi bi-info-circle"></i></button>
+                                    <button type="button" class="btn btn-success acheter">Acheter <i class="bi bi-cart-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="container col-md-6 col-lg-4 d-flex justify-content-center">
+                        <div class="card row my-4 mt-md-0 le_produit" style="width: 18rem;">
+
+                            <div class="modal fade" id="modaleVelo2" tabindex="-1" aria-labelledby="ModalLabelVelo2" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title nomItem" id="ModalLabelVelo2">Vélo MOTOBECANE</h5>
+                                            
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer la modal"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="./assets/img/velo2.jpg" class="card-img-top imageItem" alt="vélo MOTOBECANE appuyé contre un arbre">
+                                            <p>Le vélo de route de marque MOTOBECANE est un modèle très versatile entre la route et le gravel. Le cadre est fait d'un alliage ultra légé et durable jumelé à une fourche de carbone.</p>
+                                            
+                                            <p><span class="prix_produit">1499.99</span>$</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success acheter">Acheter <i class="bi bi-cart-plus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <img src="./assets/img/velo2.jpg" class="card-img-top imageItem" alt="vélo MOTOBECANE appuyé contre un arbre">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <h5 class="card-title nomItem">Vélo MOTOBECANE</h5>
+                                    <p><span class="prix_produit">1499.99</span>$</p>
+                                </div>
+                                <p class="card-text">Vélo de route de marque MOTOBECANE.</p>
+                                <div class="d-flex justify-content-between">
+                                    <button data-bs-toggle="modal" data-bs-target="#modaleVelo2" class="btn btn-primary">En savoir plus <i class="bi bi-info-circle"></i></button>
+                                    <button class="btn btn-success acheter">Acheter <i class="bi bi-cart-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container col-md-6 col-lg-4 d-flex justify-content-center">
+                        <div class="card row my-4 mt-lg-0 le_produit" style="width: 18rem;">
+
+                            <div class="modal fade" id="modaleVelo3" tabindex="-1" aria-labelledby="ModalLabelVelo3" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content le_produit">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title nomItem" id="ModalLabelVelo3">Vélo BIANCHI</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer la modal"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="./assets/img/velo3.jpg" class="card-img-top imageItem" alt="vélo BIANCHI appuyé contre un mur">
+                                            <p>Le vélo de route BIANCHI est un vélo de route de style rétro. Il possède un cadre Alan en aluminium de taille 54x54 et un cintre Cinelli. Ça polyvalence ​vous mènera là où vous devez aller confortablement et avec style.</p>
+                                            
+                                            <p><span class="prix_produit">1999.99</span>$</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success acheter">Acheter <i class="bi bi-cart-plus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <img src="./assets/img/velo3.jpg" class="card-img-top imageItem" alt="vélo BIANCHI appuyé contre un mur">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <h5 class="card-title nomItem">Vélo BIANCHI</h5>
+                                    <p><span class="prix_produit">1999.99</span>$</p>
+                                </div>
+                                <p class="card-text">Vélo de route style rétro de marque BIANCHI.</p>
+                                <div class="d-flex justify-content-between">
+                                    <button data-bs-toggle="modal" data-bs-target="#modaleVelo3" class="btn btn-primary">En savoir plus <i class="bi bi-info-circle"></i></button>
+                                    <button class="btn btn-success acheter">Acheter <i class="bi bi-cart-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+
+            <div class="container-fluid mt-5">
+
+                <h2 id="patins">Patins</h2>
+
+                <div class="row">
+
+                    <div class="container col-md-6 d-flex justify-content-center">
+                        <div class="card row mb-4 le_produit" style="width: 18rem;">
+
+                            <div class="modal fade" id="modalePatin1" tabindex="-1" aria-labelledby="modalLabelPatin1" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title nomItem" id="modalLabelPatin1">Patin RÉTRO ROUGE</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer la modal"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="./assets/img/patins1.jpg" class="card-img-top imageItem" alt="vélo BIANCHI appuyé contre un mur">
+                                            <p>Patins à roulettes en cuir rouge et PVC adaptés aux végétaliens. Ils possèdent un support de talon et semelles de haute qualité.</p>
+                                            
+                                            <p><span class="prix_produit">149.99</span>$</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success acheter">Acheter <i class="bi bi-cart-plus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <img src="./assets/img/patins1.jpg" class="card-img-top imageItem" alt="Patin rouge de style rétro sur un fond en noir et blanc">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <h5 class="card-title nomItem">Patin RÉTRO ROUGE</h5>
+                                    <p><span class="prix_produit">149.99</span>$</p>
+                                </div>
+                                <p class="card-text">Patins à Roulettes de style rétro en cuir blanc.</p>
+                                <div class="d-flex justify-content-between">
+                                    <button data-bs-toggle="modal" data-bs-target="#modalePatin1" class="btn btn-primary">En savoir plus <i class="bi bi-info-circle"></i></button>
+                                    <button class="btn btn-success acheter">Acheter <i class="bi bi-cart-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="container col-md-6 d-flex justify-content-center">
+                        <div class="card row my-4 mt-md-0 le_produit" style="width: 18rem;">
+
+                            <div class="modal fade" id="modalePatin2" tabindex="-1" aria-labelledby="modalLabelPatin2" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title nomItem" id="modalLabelPatin2">Patin RÉTRO BLANC</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer la modal"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="./assets/img/patins2.jpg" class="card-img-top imageItem" alt="vélo BIANCHI appuyé contre un mur">
+                                            <p>Ces rollers utilisent des chaussures montantes contrôlables pour garantir une sécurité optimale et des lacets de haute qualité qui offrent une protection maximale pour garantir des pieds confortables et sûrs.</p>
+                                            
+                                            <p><span class="prix_produit">134.99</span>$</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success acheter">Acheter <i class="bi bi-cart-plus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <img src="./assets/img/patins2.jpg" class="card-img-top imageItem" alt="Patin blanc de style rétro sur un fond en jaune">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <h5 class="card-title nomItem">Patin RÉTRO BLANC</h5>
+                                    <p><span class="prix_produit">134.99</span>$</p>
+                                </div>
+                                <p class="card-text">Patins à Roulettes de style rétro en cuir blanc</p>
+                                <div class="d-flex justify-content-between">
+                                    <button data-bs-toggle="modal" data-bs-target="#modalePatin2" class="btn btn-primary">En savoir plus <i class="bi bi-info-circle"></i></button>
+                                    <button class="btn btn-success acheter">Acheter <i class="bi bi-cart-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+
+        </section>
+
+        <section id="container-liste" class="d-none">
+
+            <div class="container mt-4">
+                <h2 id="velos2">Vélos</h2>
+
+                <div class="row">
+
+                    <div class="modal fade le_produit" id="modaleListeVelo1" tabindex="-1" aria-labelledby="ModalLabelListeVelo1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title nomItem" id="ModalLabelListeVelo1">Vélo BULLS</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer la modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="./assets/img/velo1.jpg" class="card-img-top imageItem" alt="vélo BULLS dans une forêt">
+                                    <p>Vélo hybride de marque Bulls avec suspension ajustable à l'avant. Un vélo axé sur la performance avec un cadre en alliage et un système de changement de vistesse Shimano EF500 à 21 vitesses.</p>
+                                    
+                                    <p><span class="prix_produit">799.99</span>$</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-success acheter">Acheter <i class="bi bi-cart-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade le_produit" id="modaleListeVelo2" tabindex="-1" aria-labelledby="ModalLabelListeVelo2" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title nomItem" id="ModalLabelListeVelo2">Vélo MOTOBECANE</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer la modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="./assets/img/velo2.jpg" class="card-img-top imageItem" alt="vélo MOTOBECANE appuyé contre un arbre">
+                                    <p>Le vélo de route de marque MOTOBECANE est un modèle très versatile entre la route et le gravel. Le cadre est fait d'un alliage ultra légé et durable jumelé à une fourche de carbone.</p>
+                                    
+                                    <p><span class="prix_produit">1499.99</span>$</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-success acheter">Acheter <i class="bi bi-cart-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade le_produit" id="modaleListeVelo3" tabindex="-1" aria-labelledby="ModalLabelListeVelo3" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title nomItem" id="ModalLabelListeVelo3">Vélo BIANCHI</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer la modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="./assets/img/velo3.jpg" class="card-img-top imageItem" alt="vélo BIANCHI appuyé contre un mur">
+                                    <p>Le vélo de route BIANCHI est un vélo de route de style rétro. Il possède un cadre Alan en aluminium de taille 54x54 et un cintre Cinelli. Ça polyvalence ​vous mènera là où vous devez aller confortablement et avec style.</p>
+                                    
+                                    <p><span class="prix_produit">1999.99</span>$</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-success acheter">Acheter <i class="bi bi-cart-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th>Produits</th>
+                                <th>Description</th>
+                                <th>Prix</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="produit le_produit">
+
+                                <td class="d-flex flex-column align-items-center">
+                                    <p class="produit-titre text-center fw-bold nomItem">Vélo BULLS</p>
+                                    <img src="./assets/img/velo1.jpg" alt="vélo BULLS dans une forêt" width="400" class="img-fluid m-0 p-0 imageItem">
+                                </td>
+                                <td class="produit-desc">Vélo hybride de marque Bulls</td>
+                                <td class="produit-prix"><span class="prix_produit">799.99</span>$</td>
+                                <td>
+                                    <div class="d-flex flex-column">
+                                        <button data-bs-toggle="modal" data-bs-target="#modaleListeVelo1" type="button" class="btn btn-primary my-1">
+                                            <i class="bi bi-info-circle d-lg-none"></i>
+                                            <span class="d-none d-lg-block m-0">En savoir plus <i class="bi bi-info-circle"></i></span>
+                                        </button>
+                                        <button class="btn btn-success ajouter_panier my-2 acheter">
+                                            <i class="bi bi-cart-plus d-lg-none"></i>
+                                            <span class="d-none d-lg-block m-0">Acheter <i class="bi bi-cart-plus"></i></span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="produit le_produit">
+
+                                <td class="d-flex flex-column align-items-center">
+                                    <p class="produit-titre text-center fw-bold nomItem">Vélo MOTOBECANE</p>
+                                    <img src="./assets/img/velo2.jpg" alt="vélo MOTOBECANE appuyé contre un arbre" width="400" class="img-fluid m-0 p-0 imageItem">
+                                </td>
+                                <td class="produit-desc">Vélo de route de marque MOTOBECANE</td>
+                                <td class="produit-prix"><span class="prix_produit">1499.99</span>$</td>
+                                <td>
+                                    <div class="d-flex flex-column">
+                                        <button data-bs-toggle="modal" data-bs-target="#modaleListeVelo2" type="button" class="btn btn-primary my-1">
+                                            <i class="bi bi-info-circle d-lg-none"></i>
+                                            <span class="d-none d-lg-block m-0">En savoir plus <i class="bi bi-info-circle"></i></span>
+                                        </button>
+                                        <button class="btn btn-success ajouter_panier my-2">
+                                            <i class="bi bi-cart-plus d-lg-none"></i>
+                                            <span class="d-none d-lg-block m-0 acheter">Acheter <i class="bi bi-cart-plus"></i></span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="produit le_produit">
+
+                                <td class="d-flex flex-column align-items-center">
+                                    <p class="produit-titre text-center fw-bold nomItem">Vélo BIANCHI</p>
+                                    <img src="./assets/img/velo3.jpg" alt="vélo BIANCHI appuyé contre un mur" width="400" class="img-fluid m-0 p-0 imageItem">
+                                </td>
+                                <td class="produit-desc">Vélo de route style rétro de marque BIANCHI</td>
+                                <td class="produit-prix"><span class="prix_produit">1999.99</span>$</td>
+                                <td>
+                                    <div class="d-flex flex-column">
+                                        <button data-bs-toggle="modal" data-bs-target="#modaleListeVelo3" type="button" class="btn btn-primary my-1">
+                                            <i class="bi bi-info-circle d-lg-none"></i>
+                                            <span class="d-none d-lg-block m-0">En savoir plus <i class="bi bi-info-circle"></i></span>
+                                        </button>
+                                        <button class="btn btn-success ajouter_panier my-2">
+                                            <i class="bi bi-cart-plus d-lg-none"></i>
+                                            <span class="d-none d-lg-block m-0 acheter">Acheter <i class="bi bi-cart-plus"></i></span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                    
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="container mt-4" >
+                <h2 id="patins2">Patins</h2>
+
+                <div class="row">
+                    <div class="modal fade le_produit" id="modaleListeListe1" tabindex="-1" aria-labelledby="modalLabelListePatin1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content le_produit">
+                                <div class="modal-header">
+                                    <h5 class="modal-title nomItem" id="modalLabelListePatin1">Patin RÉTRO ROUGE</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer la modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="./assets/img/patins1.jpg" class="card-img-top imageItem" alt="vélo BIANCHI appuyé contre un mur">
+                                    <p>Patins à roulettes en cuir rouge et PVC adaptés aux végétaliens. Ils possèdent un support de talon et semelles de haute qualité.</p>
+                                    
+                                    <p><span class="prix_produit">149.99</span>$</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-success acheter">Acheter <i class="bi bi-cart-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade le_produit" id="modaleListeListe2" tabindex="-1" aria-labelledby="modalLabelListePatin2" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title nomItem" id="modalLabelListePatin2">Patin RÉTRO BLANC</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer la modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="./assets/img/patins2.jpg" class="card-img-top imageItem" alt="vélo BIANCHI appuyé contre un mur">
+                                    <p>Ces rollers utilisent des chaussures montantes contrôlables pour garantir une sécurité optimale et des lacets de haute qualité qui offrent une protection maximale pour garantir des pieds confortables et sûrs.</p>   
+                                    <p><span class="prix_produit">134.99</span>$</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-success acheter">Acheter <i class="bi bi-cart-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th>Produits</th>
+                                <th>Description</th>
+                                <th>Prix</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr class="produit le_produit">
+
+                                <td class="d-flex flex-column align-items-center">
+                                    <p class="produit-titre text-center fw-bold nomItem">Patin RÉTRO ROUGE</p>
+                                    <img src="./assets/img/patins1.jpg" alt="vélo BULLS dans une forêt" width="400" class="img-fluid m-0 p-0 imageItem">
+                                </td>
+                                <td class="produit-desc">Patins à Roulettes de style rétro en cuir rouge</td>
+                                <td class="produit-prix"><span class="prix_produit">149.99</span>$</td>
+                                <td>
+                                    <div class="d-flex flex-column">
+                                        <button data-bs-toggle="modal" data-bs-target="#modaleListeListe1" type="button" class="btn btn-primary my-1">
+                                            <i class="bi bi-info-circle d-lg-none"></i>
+                                            <span class="d-none d-lg-block m-0">En savoir plus <i class="bi bi-info-circle"></i></span>
+                                        </button>
+                                        <button class="btn btn-success ajouter_panier my-2">
+                                            <i class="bi bi-cart-plus d-lg-none"></i>
+                                            <span class="d-none d-lg-block m-0 acheter">Acheter <i class="bi bi-cart-plus"></i></span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="produit le_produit">
+
+                                <td class="d-flex flex-column align-items-center">
+                                    <p class="produit-titre text-center fw-bold nomItem">Patin RÉTRO BLANC</p>
+                                    <img src="./assets/img/patins2.jpg" alt="vélo MOTOBECANE appuyé contre un arbre" width="400" class="img-fluid m-0 p-0 imageItem">
+                                </td>
+                                <td class="produit-desc">Patins à Roulettes de style rétro en cuir blanc</td>
+                                <td class="produit-prix"><span class="prix_produit">134.99</span>$</td>
+                                <td>
+                                    <div class="d-flex flex-column">
+                                        <button data-bs-toggle="modal" data-bs-target="#modaleListeListe2" type="button" class="btn btn-primary my-1">
+                                            <i class="bi bi-info-circle d-lg-none"></i>
+                                            <span class="d-none d-lg-block m-0">En savoir plus <i class="bi bi-info-circle"></i></span>
+                                        </button>
+                                        <button class="btn btn-success ajouter_panier my-2">
+                                            <i class="bi bi-cart-plus d-lg-none"></i>
+                                            <span class="d-none d-lg-block m-0 acheter">Acheter <i class="bi bi-cart-plus"></i></span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                    
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+    
+    <footer class="container-fluid p-0">
+        <div class="container-fluid text-light bg-dark py-4">
+            <div class="row">
+                <p class="col-12 col-md-6 text-center">Jean-Philippe Michaud</p>
+                <p class="col-12 col-md-6 text-center">PMI - 2021</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="./assets/scripts/bootstrap.bundle.min.js"></script>
+    <script src="./assets/scripts/main.js"></script>
+</body>
+</html>
